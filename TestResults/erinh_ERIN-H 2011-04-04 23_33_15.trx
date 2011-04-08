@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="425444e5-cc5f-4d6f-9918-51a309169c9c" name="erinh@ERIN-H 2011-04-04 23:33:15" runUser="SUNSHINE\erinh" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="9af86cf1-fadb-46d3-a32e-3457b1733d91">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="erinh_ERIN-H 2011-04-04 23_33_15">
+      <DeploymentItem filename="C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\bin\Debug\Monads.NET.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-04-04T23:33:15.3627092-06:00" queuing="2011-04-04T23:33:23.0691500-06:00" start="2011-04-04T23:33:23.2451601-06:00" finish="2011-04-04T23:33:24.9492576-06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="With_on_An_Class_returns_value" storage="c:\users\erinh.sunshine\documents\my dropbox\src\monads.net\monads.net\monads.net.tests\bin\debug\monads.net.tests.dll" id="4a6834bd-a97d-2aa6-1f09-303f3ff7e263">
+      <Execution id="c16c4d0c-d703-4ad9-99f6-6f6ebf3d551c" />
+      <TestMethod codeBase="C:/Users/erinh.SUNSHINE/Documents/My Dropbox/src/Monads.NET/Monads.NET/Monads.Net.Tests/bin/Debug/Monads.Net.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Net.Tests.MaybeTests, Monads.Net.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="With_on_An_Class_returns_value" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4a6834bd-a97d-2aa6-1f09-303f3ff7e263" executionId="c16c4d0c-d703-4ad9-99f6-6f6ebf3d551c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c16c4d0c-d703-4ad9-99f6-6f6ebf3d551c" testId="4a6834bd-a97d-2aa6-1f09-303f3ff7e263" testName="With_on_An_Class_returns_value" computerName="ERIN-H" duration="00:00:00.0285436" startTime="2011-04-04T23:33:23.3891683-06:00" endTime="2011-04-04T23:33:24.7392455-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c16c4d0c-d703-4ad9-99f6-6f6ebf3d551c">
+    </UnitTestResult>
+  </Results>
+</TestRun>

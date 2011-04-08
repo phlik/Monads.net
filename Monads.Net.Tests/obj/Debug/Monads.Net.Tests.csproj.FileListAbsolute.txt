@@ -1,0 +1,7 @@
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\bin\Debug\Monads.Net.Tests.dll
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\bin\Debug\Monads.Net.Tests.pdb
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\bin\Debug\Monads.NET.dll
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\bin\Debug\Monads.NET.pdb
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.dll
+C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.pdb

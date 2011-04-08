@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="79c0e018-ef1b-42d0-815d-d31e5cd05357" name="erinh@ERIN-H 2011-04-04 23:56:20" runUser="SUNSHINE\erinh" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="9af86cf1-fadb-46d3-a32e-3457b1733d91">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="erinh_ERIN-H 2011-04-04 23_56_20">
+      <DeploymentItem filename="C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\bin\Debug\Monads.NET.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-04-04T23:56:20.7769504-06:00" queuing="2011-04-04T23:56:22.7050607-06:00" start="2011-04-04T23:56:22.9030720-06:00" finish="2011-04-04T23:56:24.3061523-06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Return_on_Dictionary_no_key_return_fail_value" storage="c:\users\erinh.sunshine\documents\my dropbox\src\monads.net\monads.net\monads.net.tests\bin\debug\monads.net.tests.dll" id="2be784b2-844b-6152-604c-58482aac8073">
+      <Execution id="9116f1a9-a8ec-47a5-a72f-ebcd8cd6197f" />
+      <TestMethod codeBase="C:/Users/erinh.SUNSHINE/Documents/My Dropbox/src/Monads.NET/Monads.NET/Monads.Net.Tests/bin/Debug/Monads.Net.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Net.Tests.MaybeTests, Monads.Net.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Return_on_Dictionary_no_key_return_fail_value" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2be784b2-844b-6152-604c-58482aac8073" executionId="9116f1a9-a8ec-47a5-a72f-ebcd8cd6197f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9116f1a9-a8ec-47a5-a72f-ebcd8cd6197f" testId="2be784b2-844b-6152-604c-58482aac8073" testName="Return_on_Dictionary_no_key_return_fail_value" computerName="ERIN-H" duration="00:00:00.0290605" startTime="2011-04-04T23:56:23.0740818-06:00" endTime="2011-04-04T23:56:24.1811451-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9116f1a9-a8ec-47a5-a72f-ebcd8cd6197f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

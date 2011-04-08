@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="c8088844-876c-4e6a-be91-a3b8b56e6dd9" name="erinh@ERIN-H 2011-04-05 00:09:05" runUser="SUNSHINE\erinh" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="9af86cf1-fadb-46d3-a32e-3457b1733d91">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="erinh_ERIN-H 2011-04-05 00_09_05">
+      <DeploymentItem filename="C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\bin\Debug\Monads.NET.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-04-05T00:09:05.8027074-06:00" queuing="2011-04-05T00:09:08.0468357-06:00" start="2011-04-05T00:09:08.2368466-06:00" finish="2011-04-05T00:09:09.5219201-06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Return_on_null_dictionary_returns_null" storage="c:\users\erinh.sunshine\documents\my dropbox\src\monads.net\monads.net\monads.net.tests\bin\debug\monads.net.tests.dll" id="2f233314-6a95-34ef-b7c1-b02429d336bf">
+      <Execution id="7c57d7b7-688b-45bc-aacf-e1ec5179b2c8" />
+      <TestMethod codeBase="C:/Users/erinh.SUNSHINE/Documents/My Dropbox/src/Monads.NET/Monads.NET/Monads.Net.Tests/bin/Debug/Monads.Net.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Net.Tests.MaybeTests, Monads.Net.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Return_on_null_dictionary_returns_null" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2f233314-6a95-34ef-b7c1-b02429d336bf" executionId="7c57d7b7-688b-45bc-aacf-e1ec5179b2c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7c57d7b7-688b-45bc-aacf-e1ec5179b2c8" testId="2f233314-6a95-34ef-b7c1-b02429d336bf" testName="Return_on_null_dictionary_returns_null" computerName="ERIN-H" duration="00:00:00.0326575" startTime="2011-04-05T00:09:08.4008560-06:00" endTime="2011-04-05T00:09:09.3939128-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c57d7b7-688b-45bc-aacf-e1ec5179b2c8">
+    </UnitTestResult>
+  </Results>
+</TestRun>
