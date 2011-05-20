@@ -3,3 +3,8 @@ C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NE
 C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\obj\Debug\Monads.NET.dll
 C:\Users\erinh.SUNSHINE\Documents\My Dropbox\src\Monads.NET\Monads.NET\Monads.NET\obj\Debug\Monads.NET.pdb
+D:\OpenSource\Monads.net\Monads.NET\bin\Debug\Monads.NET.dll
+D:\OpenSource\Monads.net\Monads.NET\bin\Debug\Monads.NET.pdb
+D:\OpenSource\Monads.net\Monads.NET\obj\Debug\ResolveAssemblyReference.cache
+D:\OpenSource\Monads.net\Monads.NET\obj\Debug\Monads.NET.dll
+D:\OpenSource\Monads.net\Monads.NET\obj\Debug\Monads.NET.pdb
