@@ -8,3 +8,7 @@ D:\OpenSource\Monads.net\Monads.NET\bin\Debug\Monads.NET.pdb
 D:\OpenSource\Monads.net\Monads.NET\obj\Debug\ResolveAssemblyReference.cache
 D:\OpenSource\Monads.net\Monads.NET\obj\Debug\Monads.NET.dll
 D:\OpenSource\Monads.net\Monads.NET\obj\Debug\Monads.NET.pdb
+D:\DEV\Monads.net\Monads.NET\bin\Debug\Monads.NET.dll
+D:\DEV\Monads.net\Monads.NET\bin\Debug\Monads.NET.pdb
+D:\DEV\Monads.net\Monads.NET\obj\Debug\Monads.NET.dll
+D:\DEV\Monads.net\Monads.NET\obj\Debug\Monads.NET.pdb

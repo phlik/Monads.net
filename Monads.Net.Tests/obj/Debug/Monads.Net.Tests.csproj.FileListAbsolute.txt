@@ -12,3 +12,10 @@ D:\OpenSource\Monads.net\Monads.Net.Tests\bin\Debug\Monads.NET.pdb
 D:\OpenSource\Monads.net\Monads.Net.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\OpenSource\Monads.net\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.dll
 D:\OpenSource\Monads.net\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.pdb
+D:\DEV\Monads.net\Monads.Net.Tests\bin\Debug\Monads.Net.Tests.dll
+D:\DEV\Monads.net\Monads.Net.Tests\bin\Debug\Monads.Net.Tests.pdb
+D:\DEV\Monads.net\Monads.Net.Tests\bin\Debug\Monads.NET.dll
+D:\DEV\Monads.net\Monads.Net.Tests\bin\Debug\Monads.NET.pdb
+D:\DEV\Monads.net\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.csprojResolveAssemblyReference.cache
+D:\DEV\Monads.net\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.dll
+D:\DEV\Monads.net\Monads.Net.Tests\obj\Debug\Monads.Net.Tests.pdb
