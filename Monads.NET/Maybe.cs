@@ -225,6 +225,23 @@ namespace Monads.NET
 			}
 		}
 
+
+        /// <summary>
+        /// function used with TryDo to handle the exceptions that are possibly retuned
+        /// </summary>
+        /// <typeparam name="TInput">Type of item to be returned form function</typeparam>
+        /// <param name="input">Tuple to be extended by function</param>
+        /// <param name="log">function to run if there is an exception</param>
+        /// <returns>TInput form the Tuple</returns>
+        public static TInput Handle<TInput>(this Tuple<TInput, Exception> input, Action<TInput, Exception> log)
+            where TInput : class
+        {
+            if (input.Item2 != null)
+                log(input.Item1, input.Item2);
+
+            return input.Item1;
+        }
+
 		/// <summary>
 		/// function used with TryLet and TryDo to handle the exceptions that are possibly retuned
 		/// </summary>
