@@ -74,7 +74,7 @@ namespace Monads.NET
         /// <param name="o">The Dictionary that you will be accessing</param>
         /// <param name="key">The key you will be using to access the dictionary.</param>
         /// <returns>if the key exists in the dictionary the item if the dictionary is null or doesn't have the key null</returns>
-        public static TResult With<TKey, TResult>(this Dictionary<TKey, TResult> o, TKey key)
+        public static TResult With<TKey, TResult>(this IDictionary<TKey, TResult> o, TKey key)
             where TResult : class
         {
             return (o == null || !o.ContainsKey(key)) ? null : o[key];
@@ -103,7 +103,7 @@ namespace Monads.NET
         /// <param name="key">Value to be looked up in dictionary</param>
         /// <param name="failureValue">return value if no key is found in dictionary or dictionary is null</param>
         /// <returns>failureValue if dictionary is null or key is not found otherwise the value as stored in the dictionary for that key.</returns>             
-        public static TResult Return<TKey, TResult>(this Dictionary<TKey, TResult> o, TKey key, TResult failureValue)
+        public static TResult Return<TKey, TResult>(this IDictionary<TKey, TResult> o, TKey key, TResult failureValue)
         {
             return (o == null || !o.ContainsKey(key)) ? failureValue : o[key];
         }
