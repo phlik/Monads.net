@@ -35,6 +35,27 @@ namespace Monads.NET
         }
 
         /// <summary>
+        /// Will take in an object and if it is not null run a Boolean evaluation on the object if the result is true it will run an action on the object and returns original object
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <param name="o">Object being extended</param>
+        /// <param name="evaluator">Evaluation Function</param>
+        /// <param name="action">function that will act on the object</param>
+        /// <returns>Same instance of object that was passed in</returns>
+        public static TInput IfDo<TInput>(this TInput o, Func<TInput, bool> evaluator, Action<TInput> action)
+            where TInput : class
+        {
+            if (o == null) return null;
+
+            if (evaluator(o))
+            {
+                action(o);
+            }
+
+            return o;
+        }
+
+        /// <summary>
         /// Allows for a null safe accessing of an item
         /// </summary>
         /// <typeparam name="TInput">Reference type of object being extended</typeparam>
