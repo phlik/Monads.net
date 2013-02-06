@@ -237,6 +237,31 @@ namespace Monads.Net.Tests
 
 			Assert.IsNull(source.With(c => c + c));
 		}
+        
+        [TestMethod]
+        public void IfDo_returns_value()
+        {
+            var source = new[] { "a", "b", "c" };
+
+            var items = source.IfDo(c => c.Count() == 3, c => { });
+
+            Assert.AreEqual("a,b,c", String.Join(",", items));
+        }
+
+        [TestMethod]
+        public void IfDo_does_do()
+        {
+            var source = new[] { "a", "b", "c" };
+            var did = false;
+            var didAgain = false;
+
+            source
+                .IfDo(c => c.Count() == 3, c => { did = true; })
+                .IfDo(c => c.Count() > 4, c => { didAgain = true; });
+
+            Assert.AreEqual(did, true);
+            Assert.AreEqual(didAgain, false);
+        }
 	}
 
 	public class TestableDummy
