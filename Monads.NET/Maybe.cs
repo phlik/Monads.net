@@ -175,6 +175,19 @@ namespace Monads.NET
         }
 
         /// <summary>
+        /// Allows for a an alternative value to be used when an object is null.   
+        /// </summary>
+        /// <typeparam name="TInput">type of object to extend</typeparam>
+        /// <param name="o">object to be extended</param>
+        /// <param name="recover">value that will be used if o is null</param>
+        /// <returns></returns>
+        public static TInput Recover<TInput>(this TInput o, TInput recover)
+            where TInput : class
+        {
+            return o ?? recover;
+        }
+
+        /// <summary>
         /// Allows for a function to run on an object when it is not null otherwise returns a default value.
         /// </summary>
         /// <typeparam name="TInput">type of object to be extended</typeparam>
