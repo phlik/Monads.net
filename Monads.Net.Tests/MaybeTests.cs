@@ -262,6 +262,20 @@ namespace Monads.Net.Tests
             Assert.AreEqual(did, true);
             Assert.AreEqual(didAgain, false);
         }
+
+		[TestMethod]
+		public void Recover_uses_value_when_null()
+		{
+		    string val = null;
+		    Assert.AreEqual(val.Recover("a"), "a");
+		}
+
+		[TestMethod]
+		public void Recover_does_not_use_value_when_not_null()
+		{
+		    string val = "a";
+		    Assert.AreEqual(val.Recover("b"), "a");
+		}
 	}
 
 	public class TestableDummy
