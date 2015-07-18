@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Monads.NET
 {
@@ -101,6 +102,53 @@ namespace Monads.NET
             TResult value;
             return (o == null || !o.TryGetValue(key, out value)) ? null : value;
         }
+
+        /// <summary>
+        /// Allows for a null safe accessing of an item
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
+        /// <param name="o">instance of object being extended</param>
+        /// <param name="evaluator">function that acts on object to return a result</param>
+        /// <returns>null if object is null or an instance of TResult</returns>
+        public static Task<TResult> WithAsync<TInput, TResult>(this TInput o, Func<TInput, Task<TResult>> evaluator)
+            where TResult : class
+            where TInput : class
+        {
+            return (o == null) ? TaskEx.FromResult<TResult>(null) : evaluator(o);
+        }
+        /// <summary>
+        /// Allows for a null safe accessing of an item
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
+        /// <param name="o">instance of object being extended</param>
+        /// <param name="evaluator">function that acts on object to return a result</param>
+        /// <returns>null if object is null or an instance of TResult</returns>
+        public static Task WithAsync<TInput>(this TInput o, Func<TInput, Task> evaluator)
+            where TInput : class
+        {
+            return (o == null) ? TaskEx.FromResult<object>(null) : evaluator(o);
+        }
+
+
+        /// <summary>
+        /// Allows for a null safe accessing of items
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
+        /// <param name="o">instance of collections of objects being extended</param>
+        /// <param name="evaluator">function that acts on object to return a result</param>
+        /// <returns>null if object is null or an instance of TResult</returns>
+        public async static Task<IEnumerable<TResult>> WithAsync<TInput, TResult>(this IEnumerable<TInput> o, Func<TInput, Task<TResult>> evaluator)
+            where TResult : class
+            where TInput : class
+        {
+            if (o == null) return null;
+            
+            return await TaskEx.WhenAll(o.Select(async e => await evaluator(e)));
+        }
+
 
         /// <summary>
         ///  Used for null safe accessing of an item with a default value in the case of a null object
