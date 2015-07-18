@@ -98,7 +98,8 @@ namespace Monads.NET
         public static TResult With<TKey, TResult>(this IDictionary<TKey, TResult> o, TKey key)
             where TResult : class
         {
-            return (o == null || !o.ContainsKey(key)) ? null : o[key];
+            TResult value;
+            return (o == null || !o.TryGetValue(key, out value)) ? null : value;
         }
 
         /// <summary>
