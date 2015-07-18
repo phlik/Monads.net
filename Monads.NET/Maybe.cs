@@ -117,20 +117,6 @@ namespace Monads.NET
         {
             return (o == null) ? TaskEx.FromResult<TResult>(null) : evaluator(o);
         }
-        /// <summary>
-        /// Allows for a null safe accessing of an item
-        /// </summary>
-        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
-        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
-        /// <param name="o">instance of object being extended</param>
-        /// <param name="evaluator">function that acts on object to return a result</param>
-        /// <returns>null if object is null or an instance of TResult</returns>
-        public static Task WithAsync<TInput>(this TInput o, Func<TInput, Task> evaluator)
-            where TInput : class
-        {
-            return (o == null) ? TaskEx.FromResult<object>(null) : evaluator(o);
-        }
-
 
         /// <summary>
         /// Allows for a null safe accessing of items
@@ -191,7 +177,7 @@ namespace Monads.NET
             action(o);
             return o;
         }
-
+        
         /// <summary>
         /// Allows for a null safe action on a IEnumerable of objects.
         /// </summary>
@@ -206,6 +192,37 @@ namespace Monads.NET
             foreach (var c in o)
             {
                 action(c);
+            }
+            return o;
+        }
+
+        /// <summary>
+        /// Allows for a null safe action on a object.
+        /// </summary>
+        /// <typeparam name="TInput">Instance of object to be acted on</typeparam>
+        /// <param name="o">object to be extended</param>
+        /// <param name="action">function that will act on the object</param>
+        /// <returns>object that was acted on</returns>
+        public static Task DoAsync<TInput>(this TInput o, Func<TInput, Task> action)
+            where TInput : class
+        {
+            return (o == null) ? TaskEx.FromResult<object>(null) : action(o);
+        }
+
+        /// <summary>
+        /// Allows for a null safe action on a IEnumerable of objects.
+        /// </summary>
+        /// <typeparam name="TInput">Instance of object to be acted on</typeparam>
+        /// <param name="o">collection to be extended</param>
+        /// <param name="action">function that will act on each object</param>
+        /// <returns>object that was acted on</returns>
+        public static async Task<IEnumerable<TInput>> DoAsync<TInput>(this IEnumerable<TInput> o, Func<TInput, Task> action) where TInput : class
+        {
+            if (o == null) return null;
+
+            foreach (var c in o)
+            {
+                await action(c);
             }
             return o;
         }
