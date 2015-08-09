@@ -369,5 +369,26 @@ namespace Monads.NET
         {
             return input.Item1;
         }
+        
+
+        public static CastToSyntax<TInput> TryCast<TInput>(this TInput input)
+        {
+            return new CastToSyntax<TInput>(input);
+        }
+
+        public class CastToSyntax<TInput>
+        {
+            private readonly TInput _value;
+
+            internal CastToSyntax(TInput value)
+            {
+                _value = value;
+            }
+
+            public TOutput To<TOutput>() where TOutput : class,TInput
+            {
+                return _value as TOutput;
+            }
+        }
     }
 }
