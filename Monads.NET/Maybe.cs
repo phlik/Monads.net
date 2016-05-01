@@ -56,6 +56,41 @@ namespace Monads.NET
             return o;
         }
 
+        public static T IfNull<T>(this T o, T valueIfNull)
+            where T : class
+        {
+            return o ?? valueIfNull;
+        }
+        public static T IfNull<T>(this T o, Func<T> providerIfNull)
+            where T : class
+        {
+            return o ?? providerIfNull();
+        }
+
+
+        public static String IfNullOrEmpty(this String o, Func<String> providerIfNull)
+        {
+            return String.IsNullOrEmpty(o) ? providerIfNull() : o;
+        }
+
+        public static String IfNullOrEmpty(this String o, String valueIfNull)
+        {
+            return String.IsNullOrEmpty(o) ? valueIfNull : o;
+        }
+
+
+        public static String IfNullOrWhiteSpace(this String o, Func<String> providerIfNull)
+        {
+            return String.IsNullOrWhiteSpace(o) ? providerIfNull() : o;
+        }
+
+        public static String IfNullOrWhiteSpace(this String o, String valueIfNull)
+        {
+            return String.IsNullOrWhiteSpace(o) ? valueIfNull : o;
+        }
+
+
+
         /// <summary>
         /// Allows for a null safe accessing of an item
         /// </summary>
@@ -370,7 +405,8 @@ namespace Monads.NET
             return input.Item1;
         }
         
-
+        
+        
         public static CastToSyntax<TInput> TryCast<TInput>(this TInput input)
         {
             return new CastToSyntax<TInput>(input);
