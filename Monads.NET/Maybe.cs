@@ -100,10 +100,9 @@ namespace Monads.NET
         /// <param name="evaluator">function that acts on object to return a result</param>
         /// <returns>null if object is null or an instance of TResult</returns>
         public static TResult With<TInput, TResult>(this TInput o, Func<TInput, TResult> evaluator)
-            where TResult : class
             where TInput : class
         {
-            return (o == null) ? null : evaluator(o);
+            return (o == null) ? default(TResult) : evaluator(o);
         }
 
         /// <summary>
