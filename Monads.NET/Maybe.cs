@@ -243,6 +243,11 @@ namespace Monads.NET
             return (o == null) ? TaskEx.FromResult<object>(null) : action(o);
         }
 
+        public static Task DoAsync<TInput>(this TInput? o, Func<TInput, Task> action)
+            where TInput : struct
+        {
+            return (o == null) ? TaskEx.FromResult<object>(null) : action(o.Value);
+        }
         /// <summary>
         /// Allows for a null safe action on a IEnumerable of objects.
         /// </summary>
