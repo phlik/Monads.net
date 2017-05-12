@@ -49,8 +49,11 @@
     <Compile Include="MaybeTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Monads.NET\Monads.NET.csproj">
-      <Project>{EAC2FD6E-BBCB-4CEA-9FEC-619A95A6E079}</Project>
+      <Project>{eac2fd6e-bbcb-4cea-9fec-619a95a6e079}</Project>
       <Name>Monads.NET</Name>
     </ProjectReference>
   </ItemGroup>

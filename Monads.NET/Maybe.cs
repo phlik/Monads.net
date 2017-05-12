@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Monads.NET
 {
@@ -55,6 +56,41 @@ namespace Monads.NET
             return o;
         }
 
+        public static T IfNull<T>(this T o, T valueIfNull)
+            where T : class
+        {
+            return o ?? valueIfNull;
+        }
+        public static T IfNull<T>(this T o, Func<T> providerIfNull)
+            where T : class
+        {
+            return o ?? providerIfNull();
+        }
+
+
+        public static String IfNullOrEmpty(this String o, Func<String> providerIfNull)
+        {
+            return String.IsNullOrEmpty(o) ? providerIfNull() : o;
+        }
+
+        public static String IfNullOrEmpty(this String o, String valueIfNull)
+        {
+            return String.IsNullOrEmpty(o) ? valueIfNull : o;
+        }
+
+
+        public static String IfNullOrWhiteSpace(this String o, Func<String> providerIfNull)
+        {
+            return String.IsNullOrWhiteSpace(o) ? providerIfNull() : o;
+        }
+
+        public static String IfNullOrWhiteSpace(this String o, String valueIfNull)
+        {
+            return String.IsNullOrWhiteSpace(o) ? valueIfNull : o;
+        }
+
+
+
         /// <summary>
         /// Allows for a null safe accessing of an item
         /// </summary>
@@ -64,10 +100,9 @@ namespace Monads.NET
         /// <param name="evaluator">function that acts on object to return a result</param>
         /// <returns>null if object is null or an instance of TResult</returns>
         public static TResult With<TInput, TResult>(this TInput o, Func<TInput, TResult> evaluator)
-            where TResult : class
             where TInput : class
         {
-            return (o == null) ? null : evaluator(o);
+            return (o == null) ? default(TResult) : evaluator(o);
         }
 
         /// <summary>
@@ -98,8 +133,42 @@ namespace Monads.NET
         public static TResult With<TKey, TResult>(this IDictionary<TKey, TResult> o, TKey key)
             where TResult : class
         {
-            return (o == null || !o.ContainsKey(key)) ? null : o[key];
+            TResult value;
+            return (o == null || !o.TryGetValue(key, out value)) ? null : value;
         }
+
+        /// <summary>
+        /// Allows for a null safe accessing of an item
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
+        /// <param name="o">instance of object being extended</param>
+        /// <param name="evaluator">function that acts on object to return a result</param>
+        /// <returns>null if object is null or an instance of TResult</returns>
+        public static Task<TResult> WithAsync<TInput, TResult>(this TInput o, Func<TInput, Task<TResult>> evaluator)
+            where TResult : class
+            where TInput : class
+        {
+            return (o == null) ? TaskEx.FromResult<TResult>(null) : evaluator(o);
+        }
+
+        /// <summary>
+        /// Allows for a null safe accessing of items
+        /// </summary>
+        /// <typeparam name="TInput">Reference type of object being extended</typeparam>
+        /// <typeparam name="TResult">Reference type of object being returned</typeparam>
+        /// <param name="o">instance of collections of objects being extended</param>
+        /// <param name="evaluator">function that acts on object to return a result</param>
+        /// <returns>null if object is null or an instance of TResult</returns>
+        public async static Task<IEnumerable<TResult>> WithAsync<TInput, TResult>(this IEnumerable<TInput> o, Func<TInput, Task<TResult>> evaluator)
+            where TResult : class
+            where TInput : class
+        {
+            if (o == null) return null;
+            
+            return await TaskEx.WhenAll(o.Select(async e => await evaluator(e)));
+        }
+
 
         /// <summary>
         ///  Used for null safe accessing of an item with a default value in the case of a null object
@@ -142,7 +211,7 @@ namespace Monads.NET
             action(o);
             return o;
         }
-
+        
         /// <summary>
         /// Allows for a null safe action on a IEnumerable of objects.
         /// </summary>
@@ -157,6 +226,42 @@ namespace Monads.NET
             foreach (var c in o)
             {
                 action(c);
+            }
+            return o;
+        }
+
+        /// <summary>
+        /// Allows for a null safe action on a object.
+        /// </summary>
+        /// <typeparam name="TInput">Instance of object to be acted on</typeparam>
+        /// <param name="o">object to be extended</param>
+        /// <param name="action">function that will act on the object</param>
+        /// <returns>object that was acted on</returns>
+        public static Task DoAsync<TInput>(this TInput o, Func<TInput, Task> action)
+            where TInput : class
+        {
+            return (o == null) ? TaskEx.FromResult<object>(null) : action(o);
+        }
+
+        public static Task DoAsync<TInput>(this TInput? o, Func<TInput, Task> action)
+            where TInput : struct
+        {
+            return (o == null) ? TaskEx.FromResult<object>(null) : action(o.Value);
+        }
+        /// <summary>
+        /// Allows for a null safe action on a IEnumerable of objects.
+        /// </summary>
+        /// <typeparam name="TInput">Instance of object to be acted on</typeparam>
+        /// <param name="o">collection to be extended</param>
+        /// <param name="action">function that will act on each object</param>
+        /// <returns>object that was acted on</returns>
+        public static async Task<IEnumerable<TInput>> DoAsync<TInput>(this IEnumerable<TInput> o, Func<TInput, Task> action) where TInput : class
+        {
+            if (o == null) return null;
+
+            foreach (var c in o)
+            {
+                await action(c);
             }
             return o;
         }
@@ -303,5 +408,6 @@ namespace Monads.NET
         {
             return input.Item1;
         }
+        
     }
 }
